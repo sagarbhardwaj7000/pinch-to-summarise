@@ -2,16 +2,17 @@
 //  SummaryApp.swift
 //  Summary
 //
-//  Created by Sagar Bhardwaj on 03/05/26.
-//
 
 import SwiftUI
 
 @main
 struct SummaryApp: App {
+    @State private var snippetStore = SnippetStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticleReaderView(article: .sample)
+                .environment(snippetStore)
         }
     }
 }
